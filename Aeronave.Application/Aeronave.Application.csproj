@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ValueObjects\" />
+    <Folder Include="UseCases\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Aeronave.ShareKernel\Aeronave.ShareKernel.csproj" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aeronave.Domain\Aeronave.Domain.csproj" />
   </ItemGroup>
 
 </Project>

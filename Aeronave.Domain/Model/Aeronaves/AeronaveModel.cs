@@ -4,13 +4,13 @@ using Aeronave.ShareKernel.Core;
 
 namespace Aeronave.Domain.Model.Aeronaves
 {
-    public class Aeronave : AggregateRoot<Guid>
+    public class AeronaveModel : AggregateRoot<Guid>
     {
         public Estado EstadoAeronave { get; set; }
         public NumeroAeronave NroAeronave { get; private set; }
         public AeronaveDetalle Detalle { get; private set; }
 
-        public Aeronave(string nroAeronave)
+        public AeronaveModel(string nroAeronave)
         {
             Id = Guid.NewGuid();
             NroAeronave = nroAeronave;
