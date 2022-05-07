@@ -4,6 +4,6 @@ namespace Aeronave.Domain.Factories
 {
     public interface IAeronaveFactory
     {
-        AeronaveModel Create(string nroAeronave);
+        AeronaveModel Create();
     }
 }

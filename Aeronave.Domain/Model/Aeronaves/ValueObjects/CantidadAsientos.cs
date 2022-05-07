@@ -1,5 +1,4 @@
 ﻿using Aeronave.ShareKernel.Core;
-using Aeronave.ShareKernel.Rules;
 
 namespace Aeronave.Domain.Model.Aeronaves.ValueObjects
 {
@@ -8,7 +7,10 @@ namespace Aeronave.Domain.Model.Aeronaves.ValueObjects
         public int Value { get; }
         public CantidadAsientos(int value)
         {
-            CheckRule(new IntBePositiveRule(value));
+            if (value < 0)
+            {
+                throw new BussinessRuleValidationException("La cantidad no puede ser negativa o cero");
+            }
             Value = value;
         }
 

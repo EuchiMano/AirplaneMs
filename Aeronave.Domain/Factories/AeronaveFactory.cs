@@ -4,9 +4,9 @@ namespace Aeronave.Domain.Factories
 {
     public class AeronaveFactory : IAeronaveFactory
     {
-        public AeronaveModel Create(string nroAeronave)
+        public AeronaveModel Create()
         {
-            return new AeronaveModel(nroAeronave);
+            return new AeronaveModel();
         }
     }
 }

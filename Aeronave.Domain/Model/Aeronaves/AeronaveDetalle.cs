@@ -1,5 +1,6 @@
 ﻿using Aeronave.Domain.Model.Aeronaves.ValueObjects;
 using Aeronave.ShareKernel.Core;
+using System;
 
 namespace Aeronave.Domain.Model.Aeronaves
 {
@@ -11,13 +12,9 @@ namespace Aeronave.Domain.Model.Aeronaves
         public CantidadAsientos NroAsientos { get; private set; }
         public float CapacidadTanque { get; private set; }
         public Aeropuerto Aeropuerto { get; private set; }
-
-        internal AeronaveDetalle()
-        {
-
-        }
-
-        internal AeronaveDetalle(string marca, string modelo, float capacidad, int nroAsientos, float capacidadTanque, Aeropuerto aeropuerto)
+        public Guid AeronaveModelId { get; set; }
+        public AeronaveModel AeronaveModel { get; private set; }
+        public AeronaveDetalle(string marca, string modelo, float capacidad, int nroAsientos, float capacidadTanque, Aeropuerto aeropuerto)
         {
             Id = Guid.NewGuid();
             Marca = marca;
@@ -27,6 +24,9 @@ namespace Aeronave.Domain.Model.Aeronaves
             CapacidadTanque = capacidadTanque;
             Aeropuerto = aeropuerto;
         }
+        public AeronaveDetalle(){}
+
+        
     }
 
     public enum Aeropuerto

@@ -5,11 +5,12 @@ namespace Aeronave.Application.Dto.UseCases.Command.Aeronave
 {
     public class CrearAeronaveCommand : IRequest<Guid>
     {
-        public List<AeronaveDetalleDto> Detalle { get; private set; }
-        public CrearAeronaveCommand(List<AeronaveDetalleDto> detalle)
+        private CrearAeronaveCommand(){ }
+        public CrearAeronaveCommand(AeronaveDetalleDto detalle)
         {
             Detalle = detalle;
         }
+        public AeronaveDetalleDto Detalle { get; set; }
 
 
     }

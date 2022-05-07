@@ -4,9 +4,9 @@
     {
         protected void CheckRule(IBussinessRule rule)
         {
-            if(rule is null)
+            if (rule is null)
             {
-                throw new ArgumentNullException(nameof(rule));
+                throw new ArgumentException("Rule cannot be null");
             }
             if (!rule.IsValid())
             {

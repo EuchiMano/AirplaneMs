@@ -1,28 +1,28 @@
 ﻿using Aeronave.Domain.Event;
-using Aeronave.Domain.Model.Aeronaves.ValueObjects;
 using Aeronave.ShareKernel.Core;
+using System;
 
 namespace Aeronave.Domain.Model.Aeronaves
 {
     public class AeronaveModel : AggregateRoot<Guid>
     {
         public Estado EstadoAeronave { get; set; }
-        public NumeroAeronave NroAeronave { get; private set; }
-        public AeronaveDetalle Detalle { get; private set; }
-
-        public AeronaveModel(string nroAeronave)
+        public AeronaveDetalle _detalle { get; set; }
+        internal AeronaveModel()
         {
             Id = Guid.NewGuid();
-            NroAeronave = nroAeronave;
-    
+            _detalle = new AeronaveDetalle();
         }
+
         public void AgregarDetalle(string marca, string modelo, float capacidad, int nroAsientos, float capacidadTanque, Aeropuerto aeropuerto)
         {
-            if (Detalle is null)
-            {
-                Detalle = new AeronaveDetalle(marca, modelo, capacidad, nroAsientos, capacidadTanque, aeropuerto);
-            }
-            AddDomainEvent(new AeronaveAgregada(Id, NroAeronave));
+            _detalle = new AeronaveDetalle(marca, modelo, capacidad, nroAsientos, capacidadTanque, aeropuerto);
+        }
+
+        public void ConsolidarAeronave()
+        {
+            var evento = new AeronaveCreado(Id);
+            AddDomainEvent(evento);
         }
     }
 
