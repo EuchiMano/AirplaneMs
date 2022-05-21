@@ -22,7 +22,6 @@ namespace Aeronave.Infraestructure.EF.Config.WriteConfig
                 .HasForeignKey<AeronaveDetalle>(b => b.AeronaveModelId);
             builder.Ignore("_domainEvents");
             builder.Ignore(x => x.DomainEvents);
-            builder.Ignore(x => x._detalle);
         }
 
         public void Configure(EntityTypeBuilder<AeronaveDetalle> builder)

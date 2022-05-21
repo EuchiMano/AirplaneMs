@@ -11,19 +11,16 @@ namespace Aeronave.Application.Dto.UseCases.Command.Aeronave
     {
         private readonly IAeronaveRepository _aeronaveRepository;
         private readonly ILogger<CrearAeronaveHandler> _logger;
-        private readonly IAeronaveService _aeronaveService;
         private readonly IAeronaveFactory _aeronaveFactory;
         private readonly IUnitOfWork _unitOfWork;
 
         public CrearAeronaveHandler(IAeronaveRepository aeronaveRepository,
             ILogger<CrearAeronaveHandler> logger,
-            IAeronaveService aeronaveService,
             IAeronaveFactory aeronaveFactory,
             IUnitOfWork unitOfWork)
         {
             _aeronaveRepository = aeronaveRepository;
             _logger = logger;
-            _aeronaveService = aeronaveService;
             _aeronaveFactory = aeronaveFactory;
             _unitOfWork = unitOfWork;
         }

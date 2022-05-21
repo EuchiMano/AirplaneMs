@@ -32,23 +32,23 @@ namespace Aeronave.Infraestructure.Migrations
                     nroAsientos = table.Column<int>(type: "int", nullable: false),
                     capacidadTanque = table.Column<float>(type: "real", nullable: false),
                     aeropuerto = table.Column<int>(type: "int", nullable: false),
-                    AeronaveId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    AeronaveModelId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AeronaveDetalle", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AeronaveDetalle_Aeronave_AeronaveId",
-                        column: x => x.AeronaveId,
+                        name: "FK_AeronaveDetalle_Aeronave_AeronaveModelId",
+                        column: x => x.AeronaveModelId,
                         principalTable: "Aeronave",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AeronaveDetalle_AeronaveId",
+                name: "IX_AeronaveDetalle_AeronaveModelId",
                 table: "AeronaveDetalle",
-                column: "AeronaveId",
+                column: "AeronaveModelId",
                 unique: true);
         }
 

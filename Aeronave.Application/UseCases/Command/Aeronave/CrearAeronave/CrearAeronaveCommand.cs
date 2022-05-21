@@ -11,7 +11,5 @@ namespace Aeronave.Application.Dto.UseCases.Command.Aeronave
             Detalle = detalle;
         }
         public AeronaveDetalleDto Detalle { get; set; }
-
-
     }
 }

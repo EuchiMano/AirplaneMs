@@ -4,16 +4,18 @@ using Aeronave.Infraestructure.EF.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace Aeronave.Infraestructure.Migrations
 {
-    [DbContext(typeof(ReadDbContext))]
-    partial class ReadDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(WriteDbContext))]
+    [Migration("20220521070110_initial-create")]
+    partial class initialcreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,28 +24,13 @@ namespace Aeronave.Infraestructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Aeronave.Infraestructure.EF.ReadModel.AeronaveReadModel", b =>
+            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.AeronaveDetalle", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("EstadoAeronave")
-                        .HasColumnType("int")
-                        .HasColumnName("estadoAeronave");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Aeronave", (string)null);
-                });
-
-            modelBuilder.Entity("Aeronave.Infraestructure.EF.ReadModel.DetalleAeronaveReadModel", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AeronaveId")
+                    b.Property<Guid>("AeronaveModelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Aeropuerto")
@@ -74,26 +61,41 @@ namespace Aeronave.Infraestructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AeronaveId")
+                    b.HasIndex("AeronaveModelId")
                         .IsUnique();
 
                     b.ToTable("AeronaveDetalle", (string)null);
                 });
 
-            modelBuilder.Entity("Aeronave.Infraestructure.EF.ReadModel.DetalleAeronaveReadModel", b =>
+            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.AeronaveModel", b =>
                 {
-                    b.HasOne("Aeronave.Infraestructure.EF.ReadModel.AeronaveReadModel", "Aeronave")
-                        .WithOne("Detalle")
-                        .HasForeignKey("Aeronave.Infraestructure.EF.ReadModel.DetalleAeronaveReadModel", "AeronaveId")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("EstadoAeronave")
+                        .HasColumnType("int")
+                        .HasColumnName("estadoAeronave");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Aeronave", (string)null);
+                });
+
+            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.AeronaveDetalle", b =>
+                {
+                    b.HasOne("Aeronave.Domain.Model.Aeronaves.AeronaveModel", "AeronaveModel")
+                        .WithOne("_detalle")
+                        .HasForeignKey("Aeronave.Domain.Model.Aeronaves.AeronaveDetalle", "AeronaveModelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Aeronave");
+                    b.Navigation("AeronaveModel");
                 });
 
-            modelBuilder.Entity("Aeronave.Infraestructure.EF.ReadModel.AeronaveReadModel", b =>
+            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.AeronaveModel", b =>
                 {
-                    b.Navigation("Detalle")
+                    b.Navigation("_detalle")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618
