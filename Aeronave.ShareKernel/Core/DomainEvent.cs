@@ -1,6 +1,8 @@
-﻿namespace Aeronave.ShareKernel.Core
+﻿using MediatR;
+
+namespace Aeronave.ShareKernel.Core
 {
-    public abstract record DomainEvent
+    public abstract record DomainEvent : INotification
     {
         public DateTime OccuredOn { get; }
         public Guid Id { get; }

@@ -1,22 +1,35 @@
 ﻿using Aeronave.Domain.Event;
 using Aeronave.ShareKernel.Core;
-using System;
 
 namespace Aeronave.Domain.Model.Aeronaves
 {
     public class AeronaveModel : AggregateRoot<Guid>
     {
-        public Estado EstadoAeronave { get; set; }
-        public AeronaveDetalle _detalle { get; set; }
-        internal AeronaveModel()
+        public Estado EstadoAeronave { get; private set; }
+        public string Marca { get; private set; }
+        public string Modelo { get; private set; }
+        public int Capacidad { get; private set; }
+        public int NroAsientos { get; private set; }
+        public int CapacidadTanque { get; private set; }
+        public Aeropuerto Aeropuerto { get; private set; }
+
+        private AeronaveModel()
         {
-            Id = Guid.NewGuid();
-            _detalle = new AeronaveDetalle();
+            Capacidad = 0;
+            NroAsientos = 0;
+            CapacidadTanque = 0;
         }
 
-        public void AgregarDetalle(string marca, string modelo, float capacidad, int nroAsientos, float capacidadTanque, Aeropuerto aeropuerto)
+        public AeronaveModel(string marca, string modelo, int capacidad, int nroAsientos, int capacidadTanque, Aeropuerto aeropuerto)
         {
-            _detalle = new AeronaveDetalle(marca, modelo, capacidad, nroAsientos, capacidadTanque, aeropuerto);
+            Id = Guid.NewGuid();
+            EstadoAeronave = Estado.Operativo;
+            Marca = marca;
+            Modelo = modelo;
+            Capacidad = capacidad;
+            NroAsientos = nroAsientos;
+            CapacidadTanque = capacidadTanque;
+            Aeropuerto = aeropuerto;
         }
 
         public void ConsolidarAeronave()
@@ -24,11 +37,24 @@ namespace Aeronave.Domain.Model.Aeronaves
             var evento = new AeronaveCreado(Id);
             AddDomainEvent(evento);
         }
+
+        public void CambiarAeropuertoActualAeronave(Aeropuerto aeropuerto)
+        {
+            Aeropuerto = aeropuerto;
+        }
     }
 
     public enum Estado
     {
-        Operativo,
-        Mantenimiento
+        Mantenimiento,
+        Operativo
+    }
+
+    public enum Aeropuerto
+    {
+        SantaCruz,
+        Cochabamba,
+        LaPaz,
+        Tarija
     }
 }

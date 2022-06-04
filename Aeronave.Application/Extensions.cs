@@ -11,7 +11,8 @@ namespace Aeronave.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
-            services.AddTransient<IAeronaveService, AeronaveService>();
+            services.AddTransient<IVueloService, VueloService>();
+            services.AddTransient<IVueloFactory, VueloFactory>();
             services.AddTransient<IAeronaveFactory, AeronaveFactory>();
             return services;
         }

@@ -25,6 +25,7 @@ namespace Aeronave.Infraestructure
             services.AddDbContext<WriteDbContext>(context =>
                 context.UseSqlServer(connectionString));
 
+            services.AddScoped<IVueloRepository, VueloRepository>();
             services.AddScoped<IAeronaveRepository, AeronaveRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;

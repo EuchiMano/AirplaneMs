@@ -22,26 +22,27 @@ namespace Aeronave.Infraestructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.AeronaveDetalle", b =>
+            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.AeronaveModel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AeronaveModelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Aeropuerto")
                         .HasColumnType("int")
                         .HasColumnName("aeropuerto");
 
-                    b.Property<float>("Capacidad")
-                        .HasColumnType("real")
-                        .HasColumnName("capacidadCarga");
+                    b.Property<int>("Capacidad")
+                        .HasColumnType("int")
+                        .HasColumnName("capacidad");
 
-                    b.Property<float>("CapacidadTanque")
-                        .HasColumnType("real")
+                    b.Property<int>("CapacidadTanque")
+                        .HasColumnType("int")
                         .HasColumnName("capacidadTanque");
+
+                    b.Property<int>("EstadoAeronave")
+                        .HasColumnType("int")
+                        .HasColumnName("estadoAeronave");
 
                     b.Property<string>("Marca")
                         .IsRequired()
@@ -59,42 +60,47 @@ namespace Aeronave.Infraestructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AeronaveModelId")
-                        .IsUnique();
-
-                    b.ToTable("AeronaveDetalle", (string)null);
+                    b.ToTable("Aeronave", (string)null);
                 });
 
-            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.AeronaveModel", b =>
+            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.Vuelo", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("EstadoAeronave")
+                    b.Property<Guid>("AeronaveId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("aeronaveId");
+
+                    b.Property<int>("AeropuertoDestino")
                         .HasColumnType("int")
-                        .HasColumnName("estadoAeronave");
+                        .HasColumnName("aeropuertoDestino");
+
+                    b.Property<int>("AeropuertoOrigen")
+                        .HasColumnType("int")
+                        .HasColumnName("aeropuertoOrigen");
+
+                    b.Property<DateTime>("HoraLlegada")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("horaLlegada");
+
+                    b.Property<DateTime>("HoraPartida")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("horaPartida");
+
+                    b.Property<int>("IdTripulacion")
+                        .HasColumnType("int")
+                        .HasColumnName("idTripulacion");
+
+                    b.Property<string>("NroVuelo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("nroVuelo");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Aeronave", (string)null);
-                });
-
-            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.AeronaveDetalle", b =>
-                {
-                    b.HasOne("Aeronave.Domain.Model.Aeronaves.AeronaveModel", "AeronaveModel")
-                        .WithOne("_detalle")
-                        .HasForeignKey("Aeronave.Domain.Model.Aeronaves.AeronaveDetalle", "AeronaveModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AeronaveModel");
-                });
-
-            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.AeronaveModel", b =>
-                {
-                    b.Navigation("_detalle")
-                        .IsRequired();
+                    b.ToTable("Vuelo", (string)null);
                 });
 #pragma warning restore 612, 618
         }

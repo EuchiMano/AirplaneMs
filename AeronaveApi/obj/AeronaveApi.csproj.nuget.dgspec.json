@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\AeronaveApi\\AeronaveApi.csproj": {}
+    "C:\\Users\\marce\\source\\repos\\AirplaneMs\\AeronaveApi\\AeronaveApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Application\\Aeronave.Application.csproj": {
+    "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Application\\Aeronave.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Application\\Aeronave.Application.csproj",
+        "projectUniqueName": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Application\\Aeronave.Application.csproj",
         "projectName": "Aeronave.Application",
-        "projectPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Application\\Aeronave.Application.csproj",
+        "projectPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Application\\Aeronave.Application.csproj",
         "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Application\\obj\\",
+        "outputPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Domain\\Aeronave.Domain.csproj": {
-                "projectPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Domain\\Aeronave.Domain.csproj"
+              "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Domain\\Aeronave.Domain.csproj": {
+                "projectPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Domain\\Aeronave.Domain.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Domain\\Aeronave.Domain.csproj": {
+    "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Domain\\Aeronave.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Domain\\Aeronave.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Domain\\Aeronave.Domain.csproj",
         "projectName": "Aeronave.Domain",
-        "projectPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Domain\\Aeronave.Domain.csproj",
+        "projectPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Domain\\Aeronave.Domain.csproj",
         "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Domain\\obj\\",
+        "outputPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -104,8 +104,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.ShareKernel\\Aeronave.ShareKernel.csproj": {
-                "projectPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.ShareKernel\\Aeronave.ShareKernel.csproj"
+              "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.ShareKernel\\Aeronave.ShareKernel.csproj": {
+                "projectPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.ShareKernel\\Aeronave.ShareKernel.csproj"
               }
             }
           }
@@ -138,14 +138,14 @@
         }
       }
     },
-    "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Infraestructure\\Aeronave.Infraestructure.csproj": {
+    "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Infraestructure\\Aeronave.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Infraestructure\\Aeronave.Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Infraestructure\\Aeronave.Infraestructure.csproj",
         "projectName": "Aeronave.Infraestructure",
-        "projectPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Infraestructure\\Aeronave.Infraestructure.csproj",
+        "projectPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Infraestructure\\Aeronave.Infraestructure.csproj",
         "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Infraestructure\\obj\\",
+        "outputPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -162,8 +162,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Application\\Aeronave.Application.csproj": {
-                "projectPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Application\\Aeronave.Application.csproj"
+              "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Application\\Aeronave.Application.csproj": {
+                "projectPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Application\\Aeronave.Application.csproj"
               }
             }
           }
@@ -216,14 +216,14 @@
         }
       }
     },
-    "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.ShareKernel\\Aeronave.ShareKernel.csproj": {
+    "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.ShareKernel\\Aeronave.ShareKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.ShareKernel\\Aeronave.ShareKernel.csproj",
+        "projectUniqueName": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.ShareKernel\\Aeronave.ShareKernel.csproj",
         "projectName": "Aeronave.ShareKernel",
-        "projectPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.ShareKernel\\Aeronave.ShareKernel.csproj",
+        "projectPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.ShareKernel\\Aeronave.ShareKernel.csproj",
         "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.ShareKernel\\obj\\",
+        "outputPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.ShareKernel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -251,6 +251,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -270,14 +276,14 @@
         }
       }
     },
-    "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\AeronaveApi\\AeronaveApi.csproj": {
+    "C:\\Users\\marce\\source\\repos\\AirplaneMs\\AeronaveApi\\AeronaveApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\AeronaveApi\\AeronaveApi.csproj",
+        "projectUniqueName": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\AeronaveApi\\AeronaveApi.csproj",
         "projectName": "AeronaveApi",
-        "projectPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\AeronaveApi\\AeronaveApi.csproj",
+        "projectPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\AeronaveApi\\AeronaveApi.csproj",
         "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\AeronaveApi\\obj\\",
+        "outputPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\AeronaveApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -294,8 +300,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Infraestructure\\Aeronave.Infraestructure.csproj": {
-                "projectPath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\Aeronave.Infraestructure\\Aeronave.Infraestructure.csproj"
+              "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Infraestructure\\Aeronave.Infraestructure.csproj": {
+                "projectPath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\Aeronave.Infraestructure\\Aeronave.Infraestructure.csproj"
               }
             }
           }

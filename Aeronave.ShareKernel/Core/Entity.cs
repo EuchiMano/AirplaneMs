@@ -3,8 +3,10 @@
     public abstract class Entity<TId>
     {
         public TId Id { get; protected set; }
-        public ICollection<DomainEvent> DomainEvents { get { return _domainEvents; } }
+
         private readonly ICollection<DomainEvent> _domainEvents;
+
+        public ICollection<DomainEvent> DomainEvents { get { return _domainEvents; } }
 
         protected Entity()
         {

@@ -6,6 +6,10 @@ namespace Aeronave.Infraestructure.EF.ReadModel
     {
         public Guid Id { get; set; }
         public Estado EstadoAeronave { get; set; }
-        public DetalleAeronaveReadModel Detalle { get; set; }
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
+        public int Capacidad { get; set; }
+        public int NroAsientos { get; set; }
+        public int CapacidadTanque { get; set; }
     }
 }

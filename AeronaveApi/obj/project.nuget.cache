@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AVgQ3FumZQlcd6214iaSrod/n739qdQzB1oSiXBUdMw3MkVoAW5bhiuuVuFapxjCVVzzGlsuG/uM0ffvx4FUAg==",
+  "dgSpecHash": "mt3MDZhiJbf8jfIijKHWwZ1Lr+AVLNOYGrTvZxR/dHgFz0KoARNaTjBb3Gv+fkxLXAwMEeYnf60Fs38lc95Sxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marce\\Source\\Repos\\AirplaneMs\\AeronaveApi\\AeronaveApi.csproj",
+  "projectFilePath": "C:\\Users\\marce\\source\\repos\\AirplaneMs\\AeronaveApi\\AeronaveApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marce\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\marce\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",

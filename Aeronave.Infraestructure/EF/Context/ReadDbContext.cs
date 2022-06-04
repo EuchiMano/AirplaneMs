@@ -19,7 +19,6 @@ namespace Aeronave.Infraestructure.EF.Context
             base.OnModelCreating(modelBuilder);
             var aeronaveConfig = new AeronaveReadConfig();
             modelBuilder.ApplyConfiguration<AeronaveReadModel>(aeronaveConfig);
-            modelBuilder.ApplyConfiguration<DetalleAeronaveReadModel>(aeronaveConfig);
             modelBuilder.Ignore<DomainEvent>();
             modelBuilder.Ignore<AeronaveCreado>();
         }

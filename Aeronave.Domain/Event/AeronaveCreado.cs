@@ -1,5 +1,4 @@
 ﻿using Aeronave.ShareKernel.Core;
-using System;
 
 namespace Aeronave.Domain.Event
 {

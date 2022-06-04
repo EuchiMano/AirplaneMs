@@ -1,11 +1,11 @@
-﻿using Aeronave.Application.Dto.UseCases.Command.Aeronave;
+﻿using Aeronave.Application.UseCases.Command.Aeronaves.CrearAeronave;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AeronaveApi.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class AeronaveController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -22,7 +22,6 @@ namespace AeronaveApi.Controllers
 
             if (id == Guid.Empty)
                 return BadRequest();
-
             return Ok(id);
         }
     }

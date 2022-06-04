@@ -24,10 +24,10 @@ namespace Aeronave.Infraestructure.EF
                 .SelectMany(x => x)
                 .ToArray();
 
-            //foreach (var @event in domainEvents)
-            //{
-            //    await _mediator.Publish(@event);
-            //}
+            foreach (var @event in domainEvents)
+            {
+                await _mediator.Publish(@event);
+            }
             await _context.SaveChangesAsync();
         }
     }

@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Aeronave.Domain\Aeronave.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\Queries\Aeronaves\GetAeronaveById\" />
+  </ItemGroup>
+
 </Project>
