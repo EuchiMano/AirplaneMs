@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+    web:
+        build: .
+        ports:
+            - "8081:5000"
+        depends_on:
+            - aeronavedbhost
+    aeronavedbhost:
+        image: "mcr.microsoft.com/mssql/server"
+        ports:
+        - "1433:1433"
+        environment:
+            SA_PASSWORD: "XPassword123"
+            ACCEPT_EULA: "Y"
