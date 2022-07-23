@@ -16,6 +16,7 @@ namespace Aeronave.Application.UseCases.Command.Aeronaves.CambiarAeropuertoAeron
         {
             var objAeronave = await _aeronaveRepository.FindByIdAsync(notification.AeronaveId);
             objAeronave.CambiarAeropuertoActualAeronave(notification.AeropuertoDestino);
+
             await _aeronaveRepository.UpdateAsync(objAeronave);
         }
     }
