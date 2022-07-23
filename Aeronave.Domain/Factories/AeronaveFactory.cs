@@ -2,12 +2,11 @@
 
 namespace Aeronave.Domain.Factories
 {
-    //mensaje
     public class AeronaveFactory : IAeronaveFactory
     {
         public AeronaveModel Create(string marca, string modelo, int capacidad, int nroAsientos, int capacidadTanque, Aeropuerto aeropuerto)
-        
+        {
             return new AeronaveModel(marca, modelo, capacidad, nroAsientos, capacidadTanque, aeropuerto);
+        }
     }
-}
 }
