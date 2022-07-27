@@ -36,7 +36,6 @@ namespace Aeronave.Application.UseCases.Command.Aeronaves.CrearAeronave
                                                                     request.Aeropuerto);
                 objAeronave.ConsolidarAeronave();
                 await _aeronaveRepository.CreateAsync(objAeronave);
-
                 await _unitOfWork.Commit();
 
                 return objAeronave.Id;
