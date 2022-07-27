@@ -37,7 +37,6 @@ namespace Aeronave.Application.UseCases.Command.Aeronaves.CrearAeronave
                 objAeronave.ConsolidarAeronave();
                 await _aeronaveRepository.CreateAsync(objAeronave);
                 await _unitOfWork.Commit();
-
                 return objAeronave.Id;
             }
             catch (Exception ex)
