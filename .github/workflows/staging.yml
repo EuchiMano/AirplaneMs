@@ -1,53 +1,41 @@
-name: Deploy and CICD
+name: Docker Image CI
+
 on:
   push:
-    branches: [main]
-
+    branches: [ "master" ]
+env:
+  IMAGE_NAME: aeronaveapi
+  IMAGE_TAG: ${{ github.run_number }}
+  
 jobs:
   build:
-
+    permissions: write-all
     runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+    steps:    
+    - uses: actions/checkout@v2
+    -
+      name: Build the Docker image
+      run: docker build . --file Dockerfile --tag noglory/aeronaveapi:1.${{ env.IMAGE_TAG }}
+    -
+      name: Login to DockerHub
+      uses: docker/login-action@v1 
       with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+    -
+      name: Push to DockerHub
+      run: docker push noglory/aeronaveapi:1.${{ env.IMAGE_TAG }}
   staging:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Configure SSH
-        env:
-          SSH_KEY: ${{secrets.SSH_KEY}}
-          SSH_HOST: ${{secrets.SSH_HOST}}
-          SSH_USER: ${{secrets.SSH_USERNAME}}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_KEY" > ~/.ssh/staging.key
-          chmod 600 ~/.ssh/staging.key
-          cat >>~/.ssh/config <<END
-            Host staging
-              HostName $SSH_HOST
-              User $SSH_USER
-              IdentityFile ~/.ssh/staging.key
-              StrictHostKeyChecking no
-          END
-      - name: Stop the server
-        run: ssh staging 'sudo systemctl stop AirplaneMs.service'
-
-      - name: Do deploy
-        run: ssh staging 'cd /var/www/AirplaneMs-app && bash deploy.sh'
-        
-      - name: Start the server
-        if: ${{ always() }}
-        run: ssh staging 'sudo systemctl start AirplaneMs.service'
+      - name: executing remote ssh commands using password
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd /tmp
+            ls -a
+          host: ${{ secrets.SSH_HOST }}
+          user: root
+          key: ${{ secrets.SSH_KEY}}
