@@ -1,0 +1,41 @@
+name: Staging deployment
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      
+  staging:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy Dotnet app
+        uses: appleboy/ssh-action@v0.1.2 
+        with:
+          host: ${{secrets.SSH_HOST}}
+          key: ${{secrets.SSH_KEY}}
+          username: ${{ secrets.SSH_USERNAME }}
+          
+          script: |
+            mkdir test
+            cd test
+            git clone git@github.com:EuchiMano/AirplaneMs.git
+            echo 'Deployment successful to digital ocean'
