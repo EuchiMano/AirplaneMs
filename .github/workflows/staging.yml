@@ -13,8 +13,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           key: ${{ secrets.SSH_KEY }}
-          username: root
-          passphrase: ${{ secrets.PASSPHRASE }}
+          username: ${{ secrets.SSH_USERNAME }}
           
           script: |
             mkdir test
