@@ -11,9 +11,9 @@ jobs:
       - name: Deploy Dotnet app
         uses: appleboy/ssh-action@master
         with:
-          key: ${{ secrets.SSH_KEY }}
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          username: root
           passphrase: ${{ secrets.PASSPHRASE }}
           
           script: |
