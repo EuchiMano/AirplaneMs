@@ -21,9 +21,9 @@ namespace Aeronave.Infraestructure
             var connectionString = configuration.GetConnectionString("AeronaveDbConnectionString");
 
             services.AddDbContext<ReadDbContext>(context =>
-                context.UseSqlServer(connectionString));
+                context.UseNpgsql(connectionString));
             services.AddDbContext<WriteDbContext>(context =>
-                context.UseSqlServer(connectionString));
+                context.UseNpgsql(connectionString));
 
             services.AddScoped<IVueloRepository, VueloRepository>();
             services.AddScoped<IAeronaveRepository, AeronaveRepository>();

@@ -3,8 +3,8 @@ using System;
 using Aeronave.Infraestructure.EF.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -18,44 +18,44 @@ namespace Aeronave.Infraestructure.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.4")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.AeronaveModel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<int>("Aeropuerto")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("aeropuerto");
 
                     b.Property<int>("Capacidad")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("capacidad");
 
                     b.Property<int>("CapacidadTanque")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("capacidadTanque");
 
                     b.Property<int>("EstadoAeronave")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("estadoAeronave");
 
                     b.Property<string>("Marca")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("text")
                         .HasColumnName("marca");
 
                     b.Property<string>("Modelo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("text")
                         .HasColumnName("modelo");
 
                     b.Property<int>("NroAsientos")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("nroAsientos");
 
                     b.HasKey("Id");
@@ -63,39 +63,39 @@ namespace Aeronave.Infraestructure.Migrations
                     b.ToTable("Aeronave", (string)null);
                 });
 
-            modelBuilder.Entity("Aeronave.Domain.Model.Aeronaves.Vuelo", b =>
+            modelBuilder.Entity("Aeronave.Domain.Model.Vuelos.Vuelo", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uuid");
 
                     b.Property<Guid>("AeronaveId")
-                        .HasColumnType("uniqueidentifier")
+                        .HasColumnType("uuid")
                         .HasColumnName("aeronaveId");
 
                     b.Property<int>("AeropuertoDestino")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("aeropuertoDestino");
 
                     b.Property<int>("AeropuertoOrigen")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("aeropuertoOrigen");
 
                     b.Property<DateTime>("HoraLlegada")
-                        .HasColumnType("datetime2")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("horaLlegada");
 
                     b.Property<DateTime>("HoraPartida")
-                        .HasColumnType("datetime2")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("horaPartida");
 
                     b.Property<int>("IdTripulacion")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("idTripulacion");
 
                     b.Property<string>("NroVuelo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("text")
                         .HasColumnName("nroVuelo");
 
                     b.HasKey("Id");
