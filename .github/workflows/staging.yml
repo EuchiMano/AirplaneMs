@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
 env:
   IMAGE_NAME: aeronaveapi
   IMAGE_TAG: ${{ github.run_number }}
