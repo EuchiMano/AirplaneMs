@@ -36,7 +36,7 @@ jobs:
           command: |
             cd /tmp
             ls -a
-            docker rm -f routems
+            docker rm -f aeronaveapi
             docker run -d -p 5001:5001 --name aeronaveapi noglory/aeronaveapi:1.${{ env.IMAGE_TAG }}
           host: ${{ secrets.SSH_HOST }}
           user: root
