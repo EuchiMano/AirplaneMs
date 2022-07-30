@@ -4,8 +4,8 @@ on:
   push:
     branches: [ "main" ]
 env:
-  IMAGE_NAME: aeronaveapi
   IMAGE_TAG: ${{ github.run_number }}
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
   
 jobs:
   build:
@@ -36,6 +36,8 @@ jobs:
           command: |
             cd /tmp
             ls -a
+            docker rm -f routems
+            docker run -d -p 5001:5001 --name aeronaveapi noglory/aeronaveapi:1.${{ env.IMAGE_TAG }}
           host: ${{ secrets.SSH_HOST }}
           user: root
           key: ${{ secrets.SSH_KEY}}
