@@ -18,12 +18,13 @@ namespace AeronaveApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CrearAeronaveCommand command)
         {
-            Guid id = await _mediator.Send(command);
+            //Guid id = await _mediator.Send(command);
 
-            if (id == Guid.Empty)
-                return BadRequest();
-            //Comentary
-            return Ok(id);
+            //if (id == Guid.Empty)
+            //    return BadRequest();
+            ////Comentary
+            //return Ok(id);
+            return BadRequest("Changed");
         }
     }
 }
