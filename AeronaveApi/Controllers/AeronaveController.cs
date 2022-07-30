@@ -22,6 +22,7 @@ namespace AeronaveApi.Controllers
 
             if (id == Guid.Empty)
                 return BadRequest();
+            //Comentary
             return Ok(id);
         }
     }
