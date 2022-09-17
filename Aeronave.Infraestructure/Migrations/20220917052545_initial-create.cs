@@ -32,13 +32,12 @@ namespace Aeronave.Infraestructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    nroVuelo = table.Column<string>(type: "text", nullable: false),
-                    horaLlegada = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    horaPartida = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    idTripulacion = table.Column<int>(type: "integer", nullable: false),
+                    nroVuelo = table.Column<Guid>(type: "uuid", nullable: false),
                     aeronaveId = table.Column<Guid>(type: "uuid", nullable: false),
-                    aeropuertoOrigen = table.Column<int>(type: "integer", nullable: false),
-                    aeropuertoDestino = table.Column<int>(type: "integer", nullable: false)
+                    estado = table.Column<string>(type: "text", nullable: false),
+                    fecha = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    aeropuertoOrigen = table.Column<Guid>(type: "uuid", nullable: false),
+                    aeropuertoDestino = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {

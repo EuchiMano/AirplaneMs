@@ -1,13 +1,11 @@
-﻿using Aeronave.Domain.Model.Aeronaves;
+﻿namespace Aeronave.Application.Dto.Vuelo;
 
-namespace Aeronave.Application.Dto.Vuelo
+public class VueloDto
 {
-    public class VueloDto
-    {
-        public DateTime HoraLlegada { get; set; }
-        public DateTime HoraPartida { get; set; }
-        public int IdTripulacion { get; set; }
-        public Guid AeronaveId { get; set; }
-        public Aeropuerto AeropuertoDestino { get; set; }
-    }
+    public Guid NroVuelo { get; set; }
+    public Guid AeronaveId { get; set; }
+    public string Estado { get; set; }
+    public DateTime Fecha { get; set; }
+    public Guid AeropuertoOrigen { get; set; }
+    public Guid AeropuertoDestino { get; set; }
 }

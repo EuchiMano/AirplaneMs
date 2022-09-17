@@ -1,20 +1,24 @@
-﻿using Aeronave.Domain.Model.Aeronaves;
-using Aeronave.ShareKernel.Core;
+﻿using Aeronave.ShareKernel.Core;
 
-namespace Aeronave.Domain.Event
+namespace Aeronave.Domain.Event;
+
+public record VueloCreado : DomainEvent
 {
-    public record VueloCreado : DomainEvent
+    public VueloCreado(Guid nroVuelo, Guid aeronaveId, string estadoVuelo, DateTime fechaVuelo,
+        Guid aeropuertoOrigen, Guid aeropuertoDestino) : base(DateTime.Now)
     {
-        public Guid VueloId { get; }
-        public string NroVuelo { get; }
-        public Guid AeronaveId { get; }
-        public Aeropuerto AeropuertoDestino { get; }
-        public VueloCreado(Guid vueloId, string nroVuelo, Guid aeronaveId, Aeropuerto aeropuertoDestino) : base(DateTime.Now)
-        {
-            VueloId = vueloId;
-            NroVuelo = nroVuelo;
-            AeronaveId = aeronaveId;
-            AeropuertoDestino = aeropuertoDestino;
-        }
+        vueloId = nroVuelo;
+        estado = estadoVuelo;
+        codAeronave = aeronaveId;
+        fecha = fechaVuelo;
+        codDestino = aeropuertoOrigen;
+        codOrigen = aeropuertoDestino;
     }
+
+    public Guid vueloId { get; set; }
+    public Guid codAeronave { get; set; }
+    public string estado { get; set; }
+    public DateTime fecha { get; set; }
+    public Guid codDestino { get; set; }
+    public Guid codOrigen { get; set; }
 }

@@ -1,4 +1,5 @@
 ﻿using Aeronave.Application.UseCases.Command.Vuelos;
+using Aeronave.Application.UseCases.Queries.Vuelos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,15 +16,12 @@ namespace AeronaveApi.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CrearVueloCommand command)
+
+        [HttpGet]
+        public async Task<IActionResult> GetAeronavesListAsync([FromRoute] GetVuelosQuery query)
         {
-            Guid id = await _mediator.Send(command);
-
-            if (id == Guid.Empty)
-                return BadRequest();
-
-            return Ok(id);
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
     }
 }

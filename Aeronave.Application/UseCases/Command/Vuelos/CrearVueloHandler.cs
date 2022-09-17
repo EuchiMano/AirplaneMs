@@ -35,10 +35,9 @@ namespace Aeronave.Application.UseCases.Command.Vuelos
         {
             try
             {
-                string nroVuelo = await _vueloService.GenerarNroVueloAsync();
-                AeronaveModel aeronaveFound = await _aeronaveRepository.FindByIdAsync(request.Vuelo.AeronaveId);
-                Vuelo objVuelo = _vueloFactory.Create(nroVuelo, request.Vuelo.HoraLlegada, request.Vuelo.HoraPartida, request.Vuelo.IdTripulacion, aeronaveFound.Id, aeronaveFound.Aeropuerto, request.Vuelo.AeropuertoDestino);
-                objVuelo.ConsolidarVuelo();
+                //string nroVuelo = await _vueloService.GenerarNroVueloAsync();
+                //AeronaveModel aeronaveFound = await _aeronaveRepository.FindByIdAsync(request.Vuelo.AeronaveId);
+                Vuelo objVuelo = _vueloFactory.Create(request.vueloId, request.codAeronave, request.estado, request.fecha, request.codOrigen, request.codDestino);
 
                 await _vueloRepository.CreateAsync(objVuelo);
                 await _unitOfWork.Commit();

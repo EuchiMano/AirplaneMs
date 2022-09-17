@@ -1,11 +1,15 @@
+using System.Reflection;
 using Aeronave.Infraestructure;
 using Aeronave.Infraestructure.EF.Context;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 // Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
