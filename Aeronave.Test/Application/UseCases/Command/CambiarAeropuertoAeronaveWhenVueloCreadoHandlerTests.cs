@@ -19,31 +19,31 @@ namespace Aeronave.Test.Application.UseCases.Command
             _aeronaveRepository = new Mock<IAeronaveRepository>();
         }
 
-        [Fact]
-        public void Handle_Correctly()
-        {
-            var aeronaveIdTest = Guid.NewGuid();
-            var vueloIdTest = Guid.NewGuid();
-            var nroVueloTest = "ABC";
-            var aeropuertoDestinoTest = Aeropuerto.Cochabamba;
+        //[Fact]
+        //public void Handle_Correctly()
+        //{
+        //    var aeronaveIdTest = Guid.NewGuid();
+        //    var vueloIdTest = Guid.NewGuid();
+        //    var nroVueloTest = "ABC";
+        //    var aeropuertoDestinoTest = Aeropuerto.Cochabamba;
 
-            const string marcaTest = "Marca Generico";
-            const string modeloTest = "Modelo Generico";
-            const int capacidadTest = 100;
-            const int nroAsientosTest = 100;
-            const int capacidadTanqueTest = 100;
-            const Aeropuerto aeropuertoTest = Aeropuerto.LaPaz;
-            var aeronaveTest = new AeronaveModel(marcaTest, modeloTest, capacidadTest, nroAsientosTest, capacidadTanqueTest, aeropuertoTest);
-            var tcs = new CancellationTokenSource(1000);
+        //    const string marcaTest = "Marca Generico";
+        //    const string modeloTest = "Modelo Generico";
+        //    const int capacidadTest = 100;
+        //    const int nroAsientosTest = 100;
+        //    const int capacidadTanqueTest = 100;
+        //    const Aeropuerto aeropuertoTest = Aeropuerto.LaPaz;
+        //    var aeronaveTest = new AeronaveModel(marcaTest, modeloTest, capacidadTest, nroAsientosTest, capacidadTanqueTest, aeropuertoTest);
+        //    var tcs = new CancellationTokenSource(1000);
 
-            _aeronaveRepository.Setup(mock => mock.FindByIdAsync(aeronaveIdTest))
-                .Returns(Task.FromResult(aeronaveTest));
+        //    _aeronaveRepository.Setup(mock => mock.FindByIdAsync(aeronaveIdTest))
+        //        .Returns(Task.FromResult(aeronaveTest));
 
-            var handler = new CambiarAeropuertoAeronaveWhenVueloCreadoHandler(_aeronaveRepository.Object);
-            var objRequest = new VueloCreado(
-                vueloIdTest, nroVueloTest, aeronaveIdTest, aeropuertoDestinoTest);
-            var result = handler.Handle(objRequest, tcs.Token);
-            Assert.Equal(Aeropuerto.Cochabamba, aeronaveTest.Aeropuerto);
-        }
+        //    var handler = new CambiarAeropuertoAeronaveWhenVueloCreadoHandler(_aeronaveRepository.Object);
+        //    var objRequest = new VueloCreado(
+        //        vueloIdTest, nroVueloTest, aeronaveIdTest, aeropuertoDestinoTest);
+        //    var result = handler.Handle(objRequest, tcs.Token);
+        //    Assert.Equal(Aeropuerto.Cochabamba, aeronaveTest.Aeropuerto);
+        //}
     }
 }

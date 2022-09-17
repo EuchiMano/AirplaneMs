@@ -1,10 +1,9 @@
-﻿using Aeronave.Domain.Model.Aeronaves;
-using Aeronave.Domain.Model.Vuelos;
+﻿using Aeronave.Domain.Model.Vuelos;
 
 namespace Aeronave.Domain.Factories
 {
     public interface IVueloFactory
     {
-        Vuelo Create(string nroVuelo, DateTime horaLlegada, DateTime horaPartida, int idTripulacion, Guid aeronaveId, Aeropuerto aeropuertoOrigen, Aeropuerto aeropuertoDestino);
+        Vuelo Create(Guid nroVuelo, Guid aeronaveId, string estado, DateTime fecha, Guid aeropuertoOrigen, Guid aeropuertoDestino);
     }
 }

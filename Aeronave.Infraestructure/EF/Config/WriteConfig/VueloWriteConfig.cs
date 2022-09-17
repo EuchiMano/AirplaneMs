@@ -10,17 +10,14 @@ namespace Aeronave.Infraestructure.EF.Config.WriteConfig
         {
             builder.ToTable("Vuelo");
             builder.HasKey(x => x.Id);
-
             builder.Property(x => x.NroVuelo)
                 .HasColumnName("nroVuelo");
-            builder.Property(x => x.HoraLlegada)
-                .HasColumnName("horaLlegada");
-            builder.Property(x => x.HoraPartida)
-                .HasColumnName("horaPartida");
-            builder.Property(x => x.IdTripulacion)
-                .HasColumnName("idTripulacion");
             builder.Property(x => x.AeronaveId)
                 .HasColumnName("aeronaveId");
+            builder.Property(x => x.Estado)
+                .HasColumnName("estado");
+            builder.Property(x => x.Fecha)
+                .HasColumnName("fecha");
             builder.Property(x => x.AeropuertoOrigen)
                 .HasColumnName("aeropuertoOrigen");
             builder.Property(x => x.AeropuertoDestino)

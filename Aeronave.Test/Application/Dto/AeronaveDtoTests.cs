@@ -15,7 +15,7 @@ namespace Aeronave.Test.Application.Dto
             const int capacidadTanqueTest = 100;
             var aeronave = new AeronaveDto();
 
-            Assert.Equal(Estado.Mantenimiento,aeronave.EstadoAeronave);
+            Assert.Equal(EstadoAeronave.Mantenimiento, aeronave.EstadoAeronave);
             Assert.Null(aeronave.Marca);
             Assert.Null(aeronave.Modelo);
             Assert.Equal(0, aeronave.Capacidad);

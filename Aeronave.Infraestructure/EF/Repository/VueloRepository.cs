@@ -10,7 +10,7 @@ namespace Aeronave.Infraestructure.EF.Repository
         public readonly DbSet<Vuelo> _vuelos;
         public VueloRepository(WriteDbContext context)
         {
-            _vuelos = context.Vuelo;   
+            _vuelos = context.Vuelo;
         }
         public async Task CreateAsync(Vuelo obj)
         {
@@ -20,6 +20,11 @@ namespace Aeronave.Infraestructure.EF.Repository
         public async Task<Vuelo> FindByIdAsync(Guid id)
         {
             return await _vuelos.SingleOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<List<Vuelo>> GetAllVuelos()
+        {
+            return await _vuelos.OrderByDescending(d => d.Fecha).ToListAsync();
         }
 
         public Task UpdateAsync(Vuelo obj)

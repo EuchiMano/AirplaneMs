@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Aeronave.Infraestructure.Migrations
 {
     [DbContext(typeof(WriteDbContext))]
-    [Migration("20220729225906_initial-create")]
+    [Migration("20220917052545_initial-create")]
     partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -75,29 +75,25 @@ namespace Aeronave.Infraestructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("aeronaveId");
 
-                    b.Property<int>("AeropuertoDestino")
-                        .HasColumnType("integer")
+                    b.Property<Guid>("AeropuertoDestino")
+                        .HasColumnType("uuid")
                         .HasColumnName("aeropuertoDestino");
 
-                    b.Property<int>("AeropuertoOrigen")
-                        .HasColumnType("integer")
+                    b.Property<Guid>("AeropuertoOrigen")
+                        .HasColumnType("uuid")
                         .HasColumnName("aeropuertoOrigen");
 
-                    b.Property<DateTime>("HoraLlegada")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("horaLlegada");
-
-                    b.Property<DateTime>("HoraPartida")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("horaPartida");
-
-                    b.Property<int>("IdTripulacion")
-                        .HasColumnType("integer")
-                        .HasColumnName("idTripulacion");
-
-                    b.Property<string>("NroVuelo")
+                    b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("text")
+                        .HasColumnName("estado");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("fecha");
+
+                    b.Property<Guid>("NroVuelo")
+                        .HasColumnType("uuid")
                         .HasColumnName("nroVuelo");
 
                     b.HasKey("Id");

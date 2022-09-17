@@ -2,6 +2,7 @@
 using Aeronave.Domain.Repositories;
 using Aeronave.Infraestructure.EF.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Aeronave.Infraestructure.EF.Repository
 {
@@ -27,6 +28,11 @@ namespace Aeronave.Infraestructure.EF.Repository
             _aeronave.Update(obj);
 
             return Task.CompletedTask;
+        }
+
+        public async Task<List<AeronaveModel>> GetAllOperativeAeronaves()
+        {
+            return await _aeronave.Where(x => x.EstadoAeronave == EstadoAeronave.Operativo).ToListAsync();
         }
     }
 }

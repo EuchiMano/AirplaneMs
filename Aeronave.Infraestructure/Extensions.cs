@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Aeronave.Application.UseCases.Consumers;
+using Aeronave.Domain.Event;
+using MassTransit;
 
 namespace Aeronave.Infraestructure
 {
@@ -17,7 +20,7 @@ namespace Aeronave.Infraestructure
             IConfiguration configuration)
         {
             services.AddApplication();
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
             var connectionString = configuration.GetConnectionString("AeronaveDbConnectionString");
 
             services.AddDbContext<ReadDbContext>(context =>
@@ -28,7 +31,31 @@ namespace Aeronave.Infraestructure
             services.AddScoped<IVueloRepository, VueloRepository>();
             services.AddScoped<IAeronaveRepository, AeronaveRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            AddRabbitMq(services, configuration);
             return services;
+        }
+
+        private static void AddRabbitMq(this IServiceCollection services, IConfiguration configuration)
+        {
+            var rabbitMqHost = configuration["RabbitMq:Host"];
+            var rabbitMqPort = configuration["RabbitMq:Port"];
+            var rabbitMqUserName = configuration["RabbitMq:UserName"];
+            var rabbitMqPassword = configuration["RabbitMq:Password"];
+
+            services.AddMassTransit(config =>
+            {
+                config.AddConsumer<VueloCreadoConsumer>().Endpoint(endpoint => endpoint.Name = VueloCreadoConsumer.QueueName);
+                config.UsingRabbitMq((context, cfg) =>
+                {
+                    var uri = string.Format("amqp://{0}:{1}@{2}:{3}", rabbitMqUserName, rabbitMqPassword, rabbitMqHost, rabbitMqPort);
+                    cfg.Host(uri);
+
+                    cfg.ReceiveEndpoint(VueloCreadoConsumer.QueueName, endpoint =>
+                    {
+                        endpoint.ConfigureConsumer<VueloCreadoConsumer>(context);
+                    });
+                });
+            });
         }
     }
 }
