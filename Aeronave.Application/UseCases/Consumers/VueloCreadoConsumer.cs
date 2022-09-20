@@ -8,7 +8,7 @@ namespace Aeronave.Application.UseCases.Consumers;
 public class VueloCreadoConsumer : IConsumer<VueloHabilitado>
 {
     public const string ExchangeName = "articulo-creado-exchange";
-    public const string QueueName = "vuelo-registrado-vuelo";
+    public const string QueueName = "VueloHabilitado";
     private readonly IMediator _mediator;
 
     public async Task Consume(ConsumeContext<VueloHabilitado> context)
