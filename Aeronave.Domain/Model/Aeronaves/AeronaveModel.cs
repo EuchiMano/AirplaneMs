@@ -1,5 +1,5 @@
 ﻿using Aeronave.Domain.Event;
-using Aeronave.ShareKernel.Core;
+using SharedKernel.Core;
 
 namespace Aeronave.Domain.Model.Aeronaves;
 

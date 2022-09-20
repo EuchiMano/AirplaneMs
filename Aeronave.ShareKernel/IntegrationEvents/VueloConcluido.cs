@@ -1,4 +1,4 @@
-﻿namespace Aeronave.ShareKernel.IntegrationEvents;
+﻿namespace SharedKernel.IntegrationEvents;
 
 public class VueloConcluido
 {

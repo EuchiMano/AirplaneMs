@@ -1,4 +1,4 @@
-﻿namespace Aeronave.ShareKernel.Core
+﻿namespace SharedKernel.Core
 {
     public abstract record IntegrationEvent
     {

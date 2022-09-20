@@ -1,9 +1,9 @@
 ﻿using Aeronave.Domain.Model.Aeronaves;
 using Aeronave.Domain.Model.Vuelos;
 using Aeronave.Infraestructure.EF.Config.WriteConfig;
-using Aeronave.ShareKernel.Core;
-using Aeronave.ShareKernel.IntegrationEvents;
 using Microsoft.EntityFrameworkCore;
+using SharedKernel.Core;
+using SharedKernel.IntegrationEvents;
 
 namespace Aeronave.Infraestructure.EF.Context
 {

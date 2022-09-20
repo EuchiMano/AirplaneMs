@@ -1,4 +1,4 @@
-﻿namespace Aeronave.ShareKernel.Core
+﻿namespace SharedKernel.Core
 {
     public interface IRepository<T, in TId> where T : AggregateRoot<TId>
     {

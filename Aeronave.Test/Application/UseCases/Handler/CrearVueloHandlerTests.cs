@@ -6,8 +6,6 @@ using Aeronave.Domain.Factories;
 using Aeronave.Domain.Model.Aeronaves;
 using Aeronave.Domain.Model.Vuelos;
 using Aeronave.Domain.Repositories;
-using Aeronave.ShareKernel.Core;
-using Aeronave.Test.Application.Dto;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System;

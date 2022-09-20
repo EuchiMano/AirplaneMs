@@ -1,9 +1,9 @@
 ﻿using Aeronave.Domain.Event;
 using Aeronave.Infraestructure.EF.Config.ReadConfig;
 using Aeronave.Infraestructure.EF.ReadModel;
-using Aeronave.ShareKernel.Core;
-using Aeronave.ShareKernel.IntegrationEvents;
 using Microsoft.EntityFrameworkCore;
+using SharedKernel.Core;
+using SharedKernel.IntegrationEvents;
 
 namespace Aeronave.Infraestructure.EF.Context
 {

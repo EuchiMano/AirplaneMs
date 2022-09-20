@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Aeronave.Application.UseCases.Command.Aeronaves.CambiarAeropuertoAeronaveWhenVueloCreado;
 using Aeronave.Domain.Event;
 using Aeronave.Domain.Model.Aeronaves;
 using Aeronave.Domain.Repositories;

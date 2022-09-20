@@ -1,6 +1,6 @@
-﻿using Aeronave.ShareKernel.Core;
+﻿using SharedKernel.Core;
 
-namespace Aeronave.ShareKernel.IntegrationEvents;
+namespace SharedKernel.IntegrationEvents;
 
 public record VueloHabilitado : IntegrationEvent
 {

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Aeronave.ShareKernel.Core;
+namespace SharedKernel.Core;
 
 public abstract record DomainEvent : INotification
 {

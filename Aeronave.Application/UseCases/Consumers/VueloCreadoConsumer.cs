@@ -1,7 +1,7 @@
 ﻿using Aeronave.Application.UseCases.Command.Vuelos;
-using Aeronave.ShareKernel.IntegrationEvents;
 using MassTransit;
 using MassTransit.Mediator;
+using SharedKernel.IntegrationEvents;
 
 namespace Aeronave.Application.UseCases.Consumers;
 

@@ -1,9 +1,9 @@
 ﻿using Aeronave.Domain.Event;
-using Aeronave.ShareKernel.Core;
 using MassTransit;
 using MediatR;
+using SharedKernel.Core;
 
-namespace Aeronave.Application.UseCases.Command.Aeronaves.CambiarAeropuertoAeronaveWhenVueloCreado;
+namespace Aeronave.Application.UseCases.DomainEventHandler.Aeronave;
 
 public class
     PublishIntegrationEventWhenAeronaveCreadoHandler : INotificationHandler<ConfirmedDomainEvent<AeronaveCreado>>
@@ -17,10 +17,10 @@ public class
 
     public async Task Handle(ConfirmedDomainEvent<AeronaveCreado> notification, CancellationToken cancellationToken)
     {
-        var evento = new ShareKernel.IntegrationEvents.AeronaveCreado
+        var evento = new SharedKernel.IntegrationEvents.AeronaveCreado
         {
             AeronaveId = notification.DomainEvent.AeronaveId
         };
-        await _publishEndpoint.Publish<ShareKernel.IntegrationEvents.AeronaveCreado>(evento);
+        await _publishEndpoint.Publish<SharedKernel.IntegrationEvents.AeronaveCreado>(evento);
     }
 }

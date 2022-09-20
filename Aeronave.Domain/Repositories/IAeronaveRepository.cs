@@ -1,5 +1,5 @@
 ﻿using Aeronave.Domain.Model.Aeronaves;
-using Aeronave.ShareKernel.Core;
+using SharedKernel.Core;
 
 namespace Aeronave.Domain.Repositories
 {

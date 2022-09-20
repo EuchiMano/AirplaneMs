@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Aeronave.ShareKernel.Core
+namespace SharedKernel.Core
 {
     public class BussinessRuleValidationException : Exception
     {

@@ -3,7 +3,7 @@ using Aeronave.Application.Dto.Aeronave;
 using Aeronave.Application.Dto.Vuelo;
 using Aeronave.Domain.Model.Aeronaves;
 
-namespace Aeronave.Test.Application.Dto
+namespace Aeronave.Test.Application
 {
     public class MockFactoryGeneric
     {

@@ -1,5 +1,5 @@
-﻿using Aeronave.ShareKernel.Core;
-using Aeronave.ShareKernel.Rules;
+﻿using SharedKernel.Core;
+using SharedKernel.Rules;
 
 namespace Aeronave.Domain.Model.Aeronaves.ValueObjects
 {
@@ -12,7 +12,7 @@ namespace Aeronave.Domain.Model.Aeronaves.ValueObjects
             Value = value;
         }
 
-        public static implicit operator string (NumeroAeronave value)
+        public static implicit operator string(NumeroAeronave value)
         {
             return value.Value;
         }
