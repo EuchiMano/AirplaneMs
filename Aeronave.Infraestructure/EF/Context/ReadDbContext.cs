@@ -2,6 +2,7 @@
 using Aeronave.Infraestructure.EF.Config.ReadConfig;
 using Aeronave.Infraestructure.EF.ReadModel;
 using Aeronave.ShareKernel.Core;
+using Aeronave.ShareKernel.IntegrationEvents;
 using Microsoft.EntityFrameworkCore;
 
 namespace Aeronave.Infraestructure.EF.Context
@@ -20,7 +21,8 @@ namespace Aeronave.Infraestructure.EF.Context
             var aeronaveConfig = new AeronaveReadConfig();
             modelBuilder.ApplyConfiguration<AeronaveReadModel>(aeronaveConfig);
             modelBuilder.Ignore<DomainEvent>();
-            modelBuilder.Ignore<AeronaveCreado>();
+            modelBuilder.Ignore<VueloCreado>();
+            modelBuilder.Ignore<VueloConcluido>();
         }
     }
 }

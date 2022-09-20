@@ -40,7 +40,7 @@ namespace Aeronave.Test.Application.UseCases.Command
         //        .Returns(Task.FromResult(aeronaveTest));
 
         //    var handler = new CambiarAeropuertoAeronaveWhenVueloCreadoHandler(_aeronaveRepository.Object);
-        //    var objRequest = new VueloCreado(
+        //    var objRequest = new VueloHabilitado(
         //        vueloIdTest, nroVueloTest, aeronaveIdTest, aeropuertoDestinoTest);
         //    var result = handler.Handle(objRequest, tcs.Token);
         //    Assert.Equal(Aeropuerto.Cochabamba, aeronaveTest.Aeropuerto);

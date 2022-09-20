@@ -87,7 +87,7 @@ namespace Aeronave.Test.Application.UseCases.Handler
 
         //    var domainEventList = (List<DomainEvent>)vueloTest.DomainEvents;
         //    Assert.Equal(1, domainEventList.Count);
-        //    Assert.IsType<VueloCreado>(domainEventList[0]);
+        //    Assert.IsType<VueloHabilitado>(domainEventList[0]);
         //}
 
         [Fact]

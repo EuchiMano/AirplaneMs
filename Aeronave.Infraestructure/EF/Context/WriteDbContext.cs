@@ -1,8 +1,8 @@
-﻿using Aeronave.Domain.Event;
-using Aeronave.Domain.Model.Aeronaves;
+﻿using Aeronave.Domain.Model.Aeronaves;
 using Aeronave.Domain.Model.Vuelos;
 using Aeronave.Infraestructure.EF.Config.WriteConfig;
 using Aeronave.ShareKernel.Core;
+using Aeronave.ShareKernel.IntegrationEvents;
 using Microsoft.EntityFrameworkCore;
 
 namespace Aeronave.Infraestructure.EF.Context
@@ -27,8 +27,8 @@ namespace Aeronave.Infraestructure.EF.Context
             modelBuilder.ApplyConfiguration<Vuelo>(vueloConfig);
 
             modelBuilder.Ignore<DomainEvent>();
-            modelBuilder.Ignore<AeronaveCreado>();
-            modelBuilder.Ignore<VueloCreado>();
+            modelBuilder.Ignore<VueloHabilitado>();
+            modelBuilder.Ignore<VueloConcluido>();
         }
     }
 }

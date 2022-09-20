@@ -1,16 +1,15 @@
 ﻿using MediatR;
 
-namespace Aeronave.ShareKernel.Core
-{
-    public abstract record DomainEvent : INotification
-    {
-        public DateTime OccuredOn { get; }
-        public Guid Id { get; }
+namespace Aeronave.ShareKernel.Core;
 
-        protected DomainEvent(DateTime occuredOn)
-        {
-            OccuredOn = occuredOn;
-            Id = Guid.NewGuid();
-        }
+public abstract record DomainEvent : INotification
+{
+    protected DomainEvent(DateTime occuredOn)
+    {
+        OccuredOn = occuredOn;
+        Id = Guid.NewGuid();
     }
+
+    public DateTime OccuredOn { get; }
+    public Guid Id { get; }
 }
