@@ -20,7 +20,7 @@ public class VueloCreadoConsumer : IConsumer<VueloHabilitado>
     {
         VueloHabilitado @event = context.Message;
         var command = new CrearVueloCommand(@event.vueloId, @event.codAeronave, @event.estado, @event.fecha,
-            @event.codOrigen, @event.codDestino);
+            @event.codRuta, @event.codRuta);
         await _mediator.Send(command);
     }
 }
