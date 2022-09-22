@@ -2,7 +2,6 @@ using System.Reflection;
 using Aeronave.Infraestructure;
 using Aeronave.Infraestructure.EF.Context;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +29,7 @@ using (var scope = app.Services.CreateScope())
     //    context.Database.Migrate();
     //}
 }
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

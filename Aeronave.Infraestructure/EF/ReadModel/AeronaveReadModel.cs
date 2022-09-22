@@ -11,5 +11,6 @@ namespace Aeronave.Infraestructure.EF.ReadModel
         public int Capacidad { get; set; }
         public int NroAsientos { get; set; }
         public int CapacidadTanque { get; set; }
+        public Aeropuerto Aeropuerto { get; set; }
     }
 }

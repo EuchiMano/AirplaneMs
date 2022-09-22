@@ -1,5 +1,4 @@
 ﻿using Aeronave.Application.Dto.Vuelo;
-using Aeronave.Application.Services;
 using Aeronave.Application.UseCases.Command.Vuelos;
 using Aeronave.Domain.Event;
 using Aeronave.Domain.Factories;
@@ -21,7 +20,6 @@ namespace Aeronave.Test.Application.UseCases.Handler
         private readonly Mock<IVueloRepository> _vueloRepository;
         private readonly Mock<IAeronaveRepository> _aeronaveRepository;
         private readonly Mock<ILogger<CrearVueloHandler>> _logger;
-        private readonly Mock<IVueloService> _vueloService;
         private readonly Mock<IVueloFactory> _vueloFactory;
         private readonly Mock<IUnitOfWork> _unitOfWork;
 

@@ -28,5 +28,10 @@ namespace Aeronave.Domain.Model.Vuelos
             AeropuertoOrigen = aeropuertoOrigen;
             AeropuertoDestino = aeropuertoDestino;
         }
+
+        public void ActualizarEstadoVuelo(string estado)
+        {
+            Estado = estado;
+        }
     }
 }

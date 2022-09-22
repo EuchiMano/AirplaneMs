@@ -2,11 +2,11 @@
 {
     public class VueloReadModel
     {
-        public Guid Id { get; set; }
-        public string NroVuelo { get; private set; }
-        public DateTime HoraLlegada { get; private set; }
-        public DateTime HoraPartida { get; private set; }
-        public int IdTripulacion { get; private set; }
+        public Guid NroVuelo { get; set; }
         public Guid AeronaveId { get; set; }
+        public string Estado { get; set; }
+        public DateTime Fecha { get; set; }
+        public Guid AeropuertoOrigen { get; set; }
+        public Guid AeropuertoDestino { get; set; }
     }
 }
