@@ -7,13 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AeronaveApi", "AeronaveApi\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeronave.Domain", "Aeronave.Domain\Aeronave.Domain.csproj", "{73B9236C-C9BE-46B9-9313-46782CB15E9B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeronave.ShareKernel", "Aeronave.ShareKernel\Aeronave.ShareKernel.csproj", "{95C42CAA-69E3-4F35-8C21-FC3DDB8EC277}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedKernel", "Aeronave.ShareKernel\SharedKernel.csproj", "{95C42CAA-69E3-4F35-8C21-FC3DDB8EC277}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeronave.Application", "Aeronave.Application\Aeronave.Application.csproj", "{A2B81793-3177-440D-B527-63197B3E96DF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeronave.Infraestructure", "Aeronave.Infraestructure\Aeronave.Infraestructure.csproj", "{29C890F1-FDA1-4B21-BB7E-B911FC147151}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aeronave.Test", "Aeronave.Test\Aeronave.Test.csproj", "{1C39FA57-0EA8-4BB0-8EB4-752E20F68336}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeronave.Test", "Aeronave.Test\Aeronave.Test.csproj", "{1C39FA57-0EA8-4BB0-8EB4-752E20F68336}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

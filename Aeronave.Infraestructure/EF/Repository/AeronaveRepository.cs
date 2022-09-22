@@ -2,7 +2,6 @@
 using Aeronave.Domain.Repositories;
 using Aeronave.Infraestructure.EF.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace Aeronave.Infraestructure.EF.Repository
 {

@@ -3,7 +3,6 @@ using Aeronave.Domain.Event;
 using Aeronave.Domain.Factories;
 using Aeronave.Domain.Model.Aeronaves;
 using Aeronave.Domain.Repositories;
-using Aeronave.ShareKernel.Core;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System;

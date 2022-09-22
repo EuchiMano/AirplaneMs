@@ -1,4 +1,4 @@
-﻿namespace Aeronave.ShareKernel.Core
+﻿namespace SharedKernel.Core
 {
     public abstract class Entity<TId>
     {
@@ -25,7 +25,7 @@
 
         protected void CheckRule(IBussinessRule rule)
         {
-            if(rule is null)
+            if (rule is null)
             {
                 throw new ArgumentException("Rule cannot be null");
             }

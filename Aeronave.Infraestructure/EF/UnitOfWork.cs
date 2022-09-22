@@ -1,7 +1,7 @@
 ﻿using Aeronave.Domain.Repositories;
 using Aeronave.Infraestructure.EF.Context;
-using Aeronave.ShareKernel.Core;
 using MediatR;
+using SharedKernel.Core;
 
 namespace Aeronave.Infraestructure.EF
 {

@@ -1,5 +1,5 @@
 ﻿using Aeronave.Domain.Event;
-using Aeronave.ShareKernel.Core;
+using SharedKernel.Core;
 
 namespace Aeronave.Domain.Model.Aeronaves;
 
@@ -12,7 +12,7 @@ public class AeronaveModel : AggregateRoot<Guid>
         CapacidadTanque = 0;
     }
 
-    public AeronaveModel(EstadoAeronave estadoAeronave, string marca, string modelo, int capacidad, int nroAsientos,
+    public AeronaveModel(string marca, string modelo, int capacidad, int nroAsientos,
         int capacidadTanque, Aeropuerto aeropuerto)
     {
         Id = Guid.NewGuid();
@@ -31,17 +31,12 @@ public class AeronaveModel : AggregateRoot<Guid>
     public int Capacidad { get; }
     public int NroAsientos { get; }
     public int CapacidadTanque { get; }
-    public Aeropuerto Aeropuerto { get; private set; }
+    public Aeropuerto Aeropuerto { get; }
 
     public void ConsolidarAeronave()
     {
         var evento = new AeronaveCreado(Id);
         AddDomainEvent(evento);
-    }
-
-    public void CambiarAeropuertoActualAeronave(Aeropuerto aeropuerto)
-    {
-        Aeropuerto = aeropuerto;
     }
 }
 

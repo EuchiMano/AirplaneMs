@@ -1,10 +1,10 @@
-﻿using Aeronave.ShareKernel.Core;
+﻿using SharedKernel.Core;
 
 namespace Aeronave.Domain.Event
 {
     public record AeronaveCreado : DomainEvent
     {
-        public Guid AeronaveId { get; }
+        public Guid AeronaveId { get; set; }
 
         public AeronaveCreado(Guid aeronaveId) : base(DateTime.Now)
         {

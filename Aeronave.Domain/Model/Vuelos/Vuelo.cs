@@ -1,7 +1,7 @@
 ﻿using Aeronave.Domain.Enums;
 using Aeronave.Domain.Event;
 using Aeronave.Domain.Model.Aeronaves;
-using Aeronave.ShareKernel.Core;
+using SharedKernel.Core;
 
 namespace Aeronave.Domain.Model.Vuelos
 {
@@ -27,6 +27,11 @@ namespace Aeronave.Domain.Model.Vuelos
             Fecha = fecha;
             AeropuertoOrigen = aeropuertoOrigen;
             AeropuertoDestino = aeropuertoDestino;
+        }
+
+        public void ActualizarEstadoVuelo(string estado)
+        {
+            Estado = estado;
         }
     }
 }

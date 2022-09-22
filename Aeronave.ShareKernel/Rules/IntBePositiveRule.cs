@@ -1,6 +1,6 @@
-﻿using Aeronave.ShareKernel.Core;
+﻿using SharedKernel.Core;
 
-namespace Aeronave.ShareKernel.Rules
+namespace SharedKernel.Rules
 {
     public class IntBePositiveRule : IBussinessRule
     {

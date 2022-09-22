@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Aeronave.Application.UseCases.Command.Aeronaves.CambiarAeropuertoAeronaveWhenVueloCreado;
 using Aeronave.Domain.Event;
 using Aeronave.Domain.Model.Aeronaves;
 using Aeronave.Domain.Repositories;
@@ -40,7 +39,7 @@ namespace Aeronave.Test.Application.UseCases.Command
         //        .Returns(Task.FromResult(aeronaveTest));
 
         //    var handler = new CambiarAeropuertoAeronaveWhenVueloCreadoHandler(_aeronaveRepository.Object);
-        //    var objRequest = new VueloCreado(
+        //    var objRequest = new VueloHabilitado(
         //        vueloIdTest, nroVueloTest, aeronaveIdTest, aeropuertoDestinoTest);
         //    var result = handler.Handle(objRequest, tcs.Token);
         //    Assert.Equal(Aeropuerto.Cochabamba, aeronaveTest.Aeropuerto);

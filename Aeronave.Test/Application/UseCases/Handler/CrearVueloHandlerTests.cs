@@ -1,13 +1,10 @@
 ﻿using Aeronave.Application.Dto.Vuelo;
-using Aeronave.Application.Services;
 using Aeronave.Application.UseCases.Command.Vuelos;
 using Aeronave.Domain.Event;
 using Aeronave.Domain.Factories;
 using Aeronave.Domain.Model.Aeronaves;
 using Aeronave.Domain.Model.Vuelos;
 using Aeronave.Domain.Repositories;
-using Aeronave.ShareKernel.Core;
-using Aeronave.Test.Application.Dto;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System;
@@ -23,7 +20,6 @@ namespace Aeronave.Test.Application.UseCases.Handler
         private readonly Mock<IVueloRepository> _vueloRepository;
         private readonly Mock<IAeronaveRepository> _aeronaveRepository;
         private readonly Mock<ILogger<CrearVueloHandler>> _logger;
-        private readonly Mock<IVueloService> _vueloService;
         private readonly Mock<IVueloFactory> _vueloFactory;
         private readonly Mock<IUnitOfWork> _unitOfWork;
 
@@ -87,7 +83,7 @@ namespace Aeronave.Test.Application.UseCases.Handler
 
         //    var domainEventList = (List<DomainEvent>)vueloTest.DomainEvents;
         //    Assert.Equal(1, domainEventList.Count);
-        //    Assert.IsType<VueloCreado>(domainEventList[0]);
+        //    Assert.IsType<VueloHabilitado>(domainEventList[0]);
         //}
 
         [Fact]
