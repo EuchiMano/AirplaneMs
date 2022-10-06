@@ -41,7 +41,7 @@ namespace Aeronave.Test.Application.UseCases.Handler
         private int idTripulacion = 1;
 
         private Vuelo vueloTest;
-        private VueloDto vueloDtoTest = MockFactoryGeneric.GetVuelo();
+        //private VueloDto vueloDtoTest = MockFactoryGeneric.GetVuelo();
 
         public CrearVueloHandlerTests()
         {

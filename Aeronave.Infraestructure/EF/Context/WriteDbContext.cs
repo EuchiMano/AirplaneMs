@@ -27,8 +27,8 @@ namespace Aeronave.Infraestructure.EF.Context
             modelBuilder.ApplyConfiguration<Vuelo>(vueloConfig);
 
             modelBuilder.Ignore<DomainEvent>();
-            modelBuilder.Ignore<VueloHabilitado>();
-            modelBuilder.Ignore<VueloConcluido>();
+            modelBuilder.Ignore<SharedKernel.IntegrationEvents.VueloHabilitado>();
+            modelBuilder.Ignore<SharedKernel.IntegrationEvents.VueloConcluido>();
         }
     }
 }
