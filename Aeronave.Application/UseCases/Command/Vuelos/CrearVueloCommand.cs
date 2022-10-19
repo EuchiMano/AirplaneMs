@@ -4,10 +4,6 @@ namespace Aeronave.Application.UseCases.Command.Vuelos;
 
 public class CrearVueloCommand : IRequest<Guid>
 {
-    private CrearVueloCommand()
-    {
-    }
-
     public CrearVueloCommand(Guid nroVuelo, Guid aeronaveId, string estadoVuelo, DateTime fechaVuelo,
         Guid aeropuertoOrigen, Guid aeropuertoDestino)
     {
@@ -15,8 +11,8 @@ public class CrearVueloCommand : IRequest<Guid>
         estado = estadoVuelo;
         codAeronave = aeronaveId;
         fecha = fechaVuelo;
-        codDestino = aeropuertoOrigen;
-        codOrigen = aeropuertoDestino;
+        codDestino = aeropuertoDestino;
+        codOrigen = aeropuertoOrigen;
     }
 
     public Guid vueloId { get; set; }

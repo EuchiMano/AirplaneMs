@@ -5,13 +5,6 @@ namespace Aeronave.Domain.Model.Aeronaves;
 
 public class AeronaveModel : AggregateRoot<Guid>
 {
-    private AeronaveModel()
-    {
-        Capacidad = 0;
-        NroAsientos = 0;
-        CapacidadTanque = 0;
-    }
-
     public AeronaveModel(string marca, string modelo, int capacidad, int nroAsientos,
         int capacidadTanque, Aeropuerto aeropuerto)
     {

@@ -11,8 +11,8 @@ public record VueloCreado : DomainEvent
         estado = estadoVuelo;
         codAeronave = aeronaveId;
         fecha = fechaVuelo;
-        codDestino = aeropuertoOrigen;
-        codOrigen = aeropuertoDestino;
+        codDestino = aeropuertoDestino;
+        codOrigen = aeropuertoOrigen;
     }
 
     public Guid vueloId { get; set; }

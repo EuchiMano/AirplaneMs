@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Aeronave.Test/CoverageHistory
+/Aeronave.Test/coveragereport
