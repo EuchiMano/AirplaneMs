@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Aeronave.Application\Aeronave.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SharedKernel\Core\" />
+  </ItemGroup>
+
 </Project>
