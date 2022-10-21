@@ -4,6 +4,7 @@ namespace Aeronave.Application.Dto.Aeronave
 {
     public class AeronaveDto
     {
+        public Guid Id { get; set; }
         public EstadoAeronave EstadoAeronave { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }

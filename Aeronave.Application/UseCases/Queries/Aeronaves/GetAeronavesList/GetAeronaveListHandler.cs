@@ -25,6 +25,7 @@ public class GetAeronaveListHandler : IRequestHandler<GetAeronavesListByQuery, I
         foreach (var aeronave in objAeronaveModel)
             objAeronaveModelDto.Add(new AeronaveDto
             {
+                Id = aeronave.Id,
                 Aeropuerto = aeronave.Aeropuerto,
                 Capacidad = aeronave.Capacidad,
                 CapacidadTanque = aeronave.CapacidadTanque,
